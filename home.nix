@@ -1,27 +1,22 @@
 { config, pkgs, ... }:
 
 {
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
+  imports = [
+    modules/browser.nix
+    modules/editor.nix
+    modules/git.nix
+    modules/shell.nix
+  ];
+
   home.username = "smnx";
   home.homeDirectory = "/home/smnx";
 
-  # This value determines the Home Manager release that your configuration is
-  # compatible with. This helps avoid breakage when a new Home Manager release
-  # introduces backwards incompatible changes.
-  #
-  # You should not change this value, even if you update Home Manager. If you do
-  # want to update the value, then make sure to first check the Home Manager
-  # release notes.
-  home.stateVersion = "23.11"; # Please read the comment before changing.
+  home.stateVersion = "23.11";
 
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
   home.packages = [
     pkgs.git
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    # pkgs.hello
+    pkgs.nixpkgs-fmt
+    pkgs.clang
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -67,15 +62,7 @@
   #
   #  /etc/profiles/per-user/smnx/etc/profile.d/hm-session-vars.sh
   #
-  home.sessionVariables = {
-    # EDITOR = "emacs";
-  };
 
-  # Let Home Manager install and manage itself.
+
   programs.home-manager.enable = true;
-  programs.git = {
-  	enable = true;
-	userName = "VAN BOSSUYT Nicolas";
-	userEmail = "me@smnx.sh";
-  };
 }

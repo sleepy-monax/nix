@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
     ];
@@ -79,20 +80,23 @@
     ];
   };
 
+  programs.fish.enable = true;
+  users.defaultUserShell = pkgs.fish;
+
   home-manager = {
-	extraSpecialArgs = {inherit inputs;};
-	users = {
-		"smnx" = import ./home.nix;
-	};
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      "smnx" = import ./home.nix;
+    };
   };
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfreePredicate = (_: true);
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     neovim
+    neovim
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -121,5 +125,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
-
 }
