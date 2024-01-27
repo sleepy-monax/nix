@@ -5,7 +5,7 @@
     modules/browser.nix
     modules/editor.nix
     modules/git.nix
-    modules/shell.nix
+    modules/shell/mod.nix
     modules/terminal.nix
   ];
 
