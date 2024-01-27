@@ -18,15 +18,15 @@
       cutekit = cutekit.defaultPackage.${system};
     in
     {
-
-      nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.dellxps = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
-          ./src/host/dellxps.nix
+          ./src/host/dellxps/hardware.nix
           ./src/system.nix
           inputs.home-manager.nixosModules.default
         ];
       };
+
 
     };
 }
