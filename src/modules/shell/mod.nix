@@ -18,7 +18,7 @@
   ];
 
   home.file = {
-    ".config/fish/functions".source = ./funcs;
+    ".config/fish/functions".source = ./scripts;
     ".config/fish/conf.d".source = ./configs;
   };
 }
