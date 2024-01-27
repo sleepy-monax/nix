@@ -20,8 +20,8 @@
       nixosConfigurations.default = nixpkgs.lib.nixosSystem {
           specialArgs = {inherit inputs;};
           modules = [ 
-            ./devices/dellxps.nix
-            ./system.nix
+            ./src/host/dellxps.nix
+            ./src/system.nix
             inputs.home-manager.nixosModules.default
           ];
         };

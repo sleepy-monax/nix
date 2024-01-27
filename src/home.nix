@@ -6,17 +6,17 @@
     modules/editor.nix
     modules/git.nix
     modules/shell.nix
+    modules/terminal.nix
   ];
 
   home.username = "smnx";
   home.homeDirectory = "/home/smnx";
-
   home.stateVersion = "23.11";
 
   home.packages = [
     pkgs.git
     pkgs.nixpkgs-fmt
-    pkgs.clang
+    pkgs.comic-mono
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -33,7 +33,7 @@
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
+  # plain files is through 'home.file'. 
   home.file = {
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
