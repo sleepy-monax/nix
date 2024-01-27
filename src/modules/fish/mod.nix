@@ -9,6 +9,7 @@
     enable = true;
     interactiveShellInit = ''
       set fish_greeting
+      set PATH $HOME/.local/bin $PATH
     '';
   };
 

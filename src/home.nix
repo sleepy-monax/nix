@@ -2,11 +2,13 @@
 
 {
   imports = [
-    modules/browser.nix
-    modules/editor.nix
-    modules/git.nix
-    modules/shell/mod.nix
-    modules/terminal.nix
+    modules/chrome/mod.nix
+    modules/fish/mod.nix
+    modules/git/mod.nix
+    modules/kitty/mod.nix
+    modules/picom/mod.nix
+    modules/utils/mod.nix
+    modules/vscode/mod.nix
   ];
 
   home.username = "smnx";
