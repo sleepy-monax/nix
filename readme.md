@@ -1,4 +1,4 @@
-# NixOS Configuration
+# NixOS Configuration more like PissOS Configuration
 
 ![meme.jpg](meme.jpg)
 
