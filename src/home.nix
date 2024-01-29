@@ -6,7 +6,7 @@
     modules/fish/mod.nix
     modules/git/mod.nix
     modules/kitty/mod.nix
-    modules/picom/mod.nix
+    # modules/picom/mod.nix
     modules/utils/mod.nix
     modules/vscode/mod.nix
   ];
